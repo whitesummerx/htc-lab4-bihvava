@@ -1,0 +1,76 @@
+# kube-prometheus-stack: лише те, що потрібне в роботі (Prometheus, kube-state-metrics, збір cAdvisor через kubelet).
+# Усе, що моніторингу не потрібне, вимкнено, щоб не відбирати CPU у вимірюваного сервісу.
+fullnameOverride: kps
+
+grafana:
+  enabled: false
+alertmanager:
+  enabled: false
+nodeExporter:
+  enabled: false
+defaultRules:
+  create: false
+kubeApiServer:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeProxy:
+  enabled: false
+coreDns:
+  enabled: false
+kubeDns:
+  enabled: false
+
+# метрики контейнерів (cAdvisor) і вузлів через kubelet
+kubelet:
+  enabled: true
+  serviceMonitor:
+    interval: 5s
+    cAdvisorInterval: 5s
+
+prometheusOperator:
+  admissionWebhooks:
+    enabled: false
+  tls:
+    enabled: false
+  nodeSelector:
+    role: infra
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+
+kube-state-metrics:
+  nodeSelector:
+    role: infra
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+  prometheusSpec:
+    scrapeInterval: 5s
+    scrapeTimeout: 4s
+    evaluationInterval: 15s
+    retention: 12h
+    # підхоплювати ServiceMonitor будь-якого namespace без мітки release
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    nodeSelector:
+      role: infra
+    tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+    resources:
+      requests:
+        cpu: 100m
+        memory: 400Mi

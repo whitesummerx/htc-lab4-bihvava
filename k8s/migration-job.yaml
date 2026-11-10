@@ -1,0 +1,35 @@
+# Job міграції схеми: чекає базу і виконує db/init.sql (ConfigMap db-init створює deploy.ps1).
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration
+spec:
+  backoffLimit: 5
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: migrate
+          image: postgres:16-alpine
+          envFrom:
+            - configMapRef:
+                name: db-config
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+          command:
+            - sh
+            - -c
+            - |
+              until pg_isready -h db -U "$POSTGRES_USER" -d "$POSTGRES_DB"; do sleep 1; done
+              psql -h db -U "$POSTGRES_USER" -d "$POSTGRES_DB" -v ON_ERROR_STOP=1 -f /init/init.sql
+          volumeMounts:
+            - name: init
+              mountPath: /init
+      volumes:
+        - name: init
+          configMap:
+            name: db-init

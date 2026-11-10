@@ -1,0 +1,8 @@
+@"
+.env
+__pycache__/
+.venv/
+*.pyc
+results/*.err
+"@ | Set-Content -Encoding ASCII .gitignore
+.idea/

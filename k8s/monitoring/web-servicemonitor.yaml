@@ -1,0 +1,16 @@
+# Prometheus знаходить усі поди web через Endpoints Service web і збирає /metrics кожні 5 с.
+# Мітка job=web збігається з Лабораторною 2; мітка pod = імʼя пода.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: web
+spec:
+  jobLabel: app
+  selector:
+    matchLabels:
+      app: web
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 5s
+      scrapeTimeout: 4s

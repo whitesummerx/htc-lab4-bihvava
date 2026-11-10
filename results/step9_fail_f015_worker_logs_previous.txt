@@ -1,0 +1,9 @@
+[pod/worker-b676bdbc5-5kpdr] unable to retrieve container logs for containerd://5cedf98dd68f062fc7a12bc332434b9b6adf47853c124c7f0d5af3937aaea509
+[pod/worker-b676bdbc5-ptb2j] unable to retrieve container logs for containerd://f08a8a8b54779b962c89e15e372a2bc9bfe8a1af8ccc715248e203f920a4345f
+[pod/worker-b676bdbc5-zm6tc] {"claim_mode":"skiplocked","result_mode":"idempotent","exclusive":false,"lease":15.0,"t_poll":0.05,"fail_rate":0.15,"ev":"start","w":"worker-b676bdbc5-zm6tc","t":1794337664.985}
+[pod/worker-b676bdbc5-zm6tc] {"id":8530,"token":1,"attempts":1,"ev":"claim","w":"worker-b676bdbc5-zm6tc","t":1794337665.012}
+[pod/worker-b676bdbc5-zm6tc] {"id":8530,"token":1,"attempts":1,"fetch":0.0057,"process":0.05216,"store":0.00466,"ev":"done","w":"worker-b676bdbc5-zm6tc","t":1794337665.077}
+[pod/worker-b676bdbc5-zm6tc] {"id":8532,"token":1,"attempts":1,"ev":"claim","w":"worker-b676bdbc5-zm6tc","t":1794337665.082}
+[pod/worker-b676bdbc5-zm6tc] {"id":8532,"token":1,"attempts":1,"fetch":0.00426,"process":0.0645,"store":0.00394,"ev":"done","w":"worker-b676bdbc5-zm6tc","t":1794337665.155}
+[pod/worker-b676bdbc5-zm6tc] {"id":8534,"token":1,"attempts":1,"ev":"claim","w":"worker-b676bdbc5-zm6tc","t":1794337665.159}
+[pod/worker-b676bdbc5-zm6tc] {"id":8534,"token":1,"attempts":1,"ev":"fail_inject","w":"worker-b676bdbc5-zm6tc","t":1794337665.189}

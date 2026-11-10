@@ -1,0 +1,714 @@
+[pod/web-7f75456549-nqh9t/web] INFO:     Started server process [1]
+[pod/web-7f75456549-nqh9t/web] INFO:     Waiting for application startup.
+[pod/web-7f75456549-nqh9t/web] INFO:     Application startup complete.
+[pod/web-7f75456549-nqh9t/web] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[pod/web-7f75456549-nqh9t/web] [requeue] n=3 t=1794336468.353
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336473.361
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336478.366
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336483.371
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336488.378
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336493.382
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336498.383
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336503.388
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336508.391
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336513.395
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336518.399
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336523.404
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336528.405
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336533.408
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336538.647
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336543.655
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336548.658
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336553.661
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336558.663
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336563.668
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336568.676
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336573.684
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336578.689
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336583.693
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336588.697
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336593.701
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336598.707
+[pod/web-7f75456549-nqh9t/web] ERROR:    Exception in ASGI application
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+[pod/web-7f75456549-nqh9t/web]     result = await app(  # type: ignore[func-returns-value]
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     return await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/applications.py", line 1216, in __call__
+[pod/web-7f75456549-nqh9t/web]     await super().__call__(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/applications.py", line 96, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, _send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/metrics.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send_wrapper)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 683, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2809, in app
+[pod/web-7f75456549-nqh9t/web]     await route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1328, in handle
+[pod/web-7f75456549-nqh9t/web]     await super().handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 289, in handle
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 166, in app
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 152, in app
+[pod/web-7f75456549-nqh9t/web]     response = await f(request)
+[pod/web-7f75456549-nqh9t/web]                ^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 745, in app
+[pod/web-7f75456549-nqh9t/web]     raw_response = await run_endpoint_function(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+[pod/web-7f75456549-nqh9t/web]     return await dependant.call(**values)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/main.py", line 168, in get_appointment
+[pod/web-7f75456549-nqh9t/web]     row = await conn.fetchrow(
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 775, in fetchrow
+[pod/web-7f75456549-nqh9t/web]     data = await self._execute(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 1904, in _execute
+[pod/web-7f75456549-nqh9t/web]     result, _ = await self.__execute(
+[pod/web-7f75456549-nqh9t/web]                 ^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2003, in __execute
+[pod/web-7f75456549-nqh9t/web]     result, stmt = await self._do_execute(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2066, in _do_execute
+[pod/web-7f75456549-nqh9t/web]     result = await executor(stmt, None)
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/protocol.pyx", line 197, in bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/protocol.pyx", line 183, in asyncpg.protocol.protocol.BaseProtocol.bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/coreproto.pyx", line 1022, in asyncpg.protocol.protocol.CoreProtocol._bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/coreproto.pyx", line 875, in asyncpg.protocol.protocol.CoreProtocol._set_state
+[pod/web-7f75456549-nqh9t/web] asyncpg.exceptions._base.InternalClientError: cannot switch to state 12; another operation (2) is in progress
+[pod/web-7f75456549-nqh9t/web] ERROR:    Exception in ASGI application
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+[pod/web-7f75456549-nqh9t/web]     result = await app(  # type: ignore[func-returns-value]
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     return await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/applications.py", line 1216, in __call__
+[pod/web-7f75456549-nqh9t/web]     await super().__call__(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/applications.py", line 96, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, _send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/metrics.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send_wrapper)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 683, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2809, in app
+[pod/web-7f75456549-nqh9t/web]     await route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1837, in handle
+[pod/web-7f75456549-nqh9t/web]     await self.original_router.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2892, in handle
+[pod/web-7f75456549-nqh9t/web]     await included_router._handle_selected(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1863, in _handle_selected
+[pod/web-7f75456549-nqh9t/web]     await original_route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1326, in handle
+[pod/web-7f75456549-nqh9t/web]     await effective_context.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 166, in app
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 152, in app
+[pod/web-7f75456549-nqh9t/web]     response = await f(request)
+[pod/web-7f75456549-nqh9t/web]                ^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 745, in app
+[pod/web-7f75456549-nqh9t/web]     raw_response = await run_endpoint_function(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+[pod/web-7f75456549-nqh9t/web]     return await dependant.call(**values)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/tasks.py", line 48, in create_task
+[pod/web-7f75456549-nqh9t/web]     exists = await conn.fetchval("SELECT 1 FROM appointments WHERE id = $1", appointment_id)
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 741, in fetchval
+[pod/web-7f75456549-nqh9t/web]     data = await self._execute(query, args, 1, timeout)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 1904, in _execute
+[pod/web-7f75456549-nqh9t/web]     result, _ = await self.__execute(
+[pod/web-7f75456549-nqh9t/web]                 ^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2003, in __execute
+[pod/web-7f75456549-nqh9t/web]     result, stmt = await self._do_execute(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2066, in _do_execute
+[pod/web-7f75456549-nqh9t/web]     result = await executor(stmt, None)
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/protocol.pyx", line 197, in bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/protocol.pyx", line 183, in asyncpg.protocol.protocol.BaseProtocol.bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/coreproto.pyx", line 1022, in asyncpg.protocol.protocol.CoreProtocol._bind_execute
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/coreproto.pyx", line 875, in asyncpg.protocol.protocol.CoreProtocol._set_state
+[pod/web-7f75456549-nqh9t/web] asyncpg.exceptions._base.InternalClientError: cannot switch to state 12; another operation (2) is in progress
+[pod/web-7f75456549-nqh9t/web] Failed to restore the pool connection floor; retrying
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 564, in _maintain_min_size
+[pod/web-7f75456549-nqh9t/web]     await holder.connect()
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 172, in connect
+[pod/web-7f75456549-nqh9t/web]     con = await self._pool._get_new_connection()
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 655, in _get_new_connection
+[pod/web-7f75456549-nqh9t/web]     con = await self._connect(
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2498, in connect
+[pod/web-7f75456549-nqh9t/web]     return await connect_utils._connect(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1307, in _connect
+[pod/web-7f75456549-nqh9t/web]     raise last_error or exceptions.TargetServerAttributeNotMatched(
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1278, in _connect
+[pod/web-7f75456549-nqh9t/web]     conn = await _connect_addr(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1092, in _connect_addr
+[pod/web-7f75456549-nqh9t/web]     return await __connect_addr(params, True, *args)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1162, in __connect_addr
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await connector
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 996, in _create_ssl_connection
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await loop.create_connection(
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "uvloop/loop.pyx", line 1979, in create_connection
+[pod/web-7f75456549-nqh9t/web] socket.gaierror: [Errno -3] Temporary failure in name resolution
+[pod/web-7f75456549-nqh9t/web] [requeue] n=13 t=1794336609.317
+[pod/web-7f75456549-nqh9t/web] ERROR:    Exception in ASGI application
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+[pod/web-7f75456549-nqh9t/web]     result = await app(  # type: ignore[func-returns-value]
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     return await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/applications.py", line 1216, in __call__
+[pod/web-7f75456549-nqh9t/web]     await super().__call__(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/applications.py", line 96, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, _send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/metrics.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send_wrapper)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 683, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2809, in app
+[pod/web-7f75456549-nqh9t/web]     await route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1837, in handle
+[pod/web-7f75456549-nqh9t/web]     await self.original_router.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2892, in handle
+[pod/web-7f75456549-nqh9t/web]     await included_router._handle_selected(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1863, in _handle_selected
+[pod/web-7f75456549-nqh9t/web]     await original_route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1326, in handle
+[pod/web-7f75456549-nqh9t/web]     await effective_context.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 166, in app
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 152, in app
+[pod/web-7f75456549-nqh9t/web]     response = await f(request)
+[pod/web-7f75456549-nqh9t/web]                ^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 745, in app
+[pod/web-7f75456549-nqh9t/web]     raw_response = await run_endpoint_function(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+[pod/web-7f75456549-nqh9t/web]     return await dependant.call(**values)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/tasks.py", line 47, in create_task
+[pod/web-7f75456549-nqh9t/web]     async with database.pool.acquire() as conn:
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 1182, in __aenter__
+[pod/web-7f75456549-nqh9t/web]     self.connection = await self.pool._acquire(self.timeout)
+[pod/web-7f75456549-nqh9t/web]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 1014, in _acquire
+[pod/web-7f75456549-nqh9t/web]     return await _acquire_impl()
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 998, in _acquire_impl
+[pod/web-7f75456549-nqh9t/web]     proxy = await ch.acquire()  # type: PoolConnectionProxy
+[pod/web-7f75456549-nqh9t/web]             ^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 189, in acquire
+[pod/web-7f75456549-nqh9t/web]     await self.connect()
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 172, in connect
+[pod/web-7f75456549-nqh9t/web]     con = await self._pool._get_new_connection()
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 655, in _get_new_connection
+[pod/web-7f75456549-nqh9t/web]     con = await self._connect(
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2498, in connect
+[pod/web-7f75456549-nqh9t/web]     return await connect_utils._connect(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1307, in _connect
+[pod/web-7f75456549-nqh9t/web]     raise last_error or exceptions.TargetServerAttributeNotMatched(
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1278, in _connect
+[pod/web-7f75456549-nqh9t/web]     conn = await _connect_addr(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1092, in _connect_addr
+[pod/web-7f75456549-nqh9t/web]     return await __connect_addr(params, True, *args)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1162, in __connect_addr
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await connector
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 996, in _create_ssl_connection
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await loop.create_connection(
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "uvloop/loop.pyx", line 1979, in create_connection
+[pod/web-7f75456549-nqh9t/web] socket.gaierror: [Errno -3] Temporary failure in name resolution
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336614.331
+[pod/web-7f75456549-nqh9t/web] [requeue] n=3 t=1794336619.339
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336629.345
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336634.352
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336639.365
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336644.369
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336649.605
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336654.619
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336659.628
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336664.639
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336669.646
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336674.655
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336679.664
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336684.670
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336689.685
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336694.694
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336699.700
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336704.703
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336709.709
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336714.721
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336719.725
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336724.733
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336729.739
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336734.742
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336739.748
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336744.752
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336749.759
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336754.766
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336759.774
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336764.786
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336769.802
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336774.810
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336779.817
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336784.830
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336789.838
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336794.845
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336799.858
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336804.865
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336810.087
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336815.094
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336820.103
+[pod/web-7f75456549-nqh9t/web] [requeue] n=2 t=1794336825.111
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336830.115
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336835.119
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336840.125
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336845.131
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336850.138
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336855.140
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336860.147
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336865.160
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336870.171
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336875.177
+[pod/web-7f75456549-nqh9t/web] [requeue] n=3 t=1794336880.180
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336885.185
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336890.192
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336895.198
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336900.204
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336905.211
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336910.219
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336915.223
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336920.230
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336925.236
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336930.248
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336935.254
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336940.260
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336945.265
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336950.272
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336955.280
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336960.288
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336965.293
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794336970.300
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336975.302
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794336980.306
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794336985.312
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336990.317
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794336995.323
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337000.329
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337005.337
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337010.342
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337015.348
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337020.356
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337025.362
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337030.428
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337035.432
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337040.439
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337045.445
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337050.451
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337055.457
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337060.463
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337065.465
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337070.468
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337075.473
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337080.481
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337085.489
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337090.494
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337095.500
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337100.512
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337105.520
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337110.529
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337115.536
+[pod/web-7f75456549-nqh9t/web] [requeue] n=4 t=1794337120.542
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337125.548
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337130.553
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337135.558
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337140.568
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337145.574
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337150.581
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337155.586
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337160.591
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337165.601
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337170.609
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337175.616
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337180.623
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337185.629
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337190.637
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337195.653
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337200.663
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337205.667
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337210.673
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337215.677
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337220.684
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337225.688
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337230.698
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337235.706
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337240.713
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337245.724
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337250.738
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337255.743
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337260.749
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337265.753
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337270.759
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337275.764
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337280.773
+[pod/web-7f75456549-nqh9t/web] [requeue] n=3 t=1794337285.781
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337290.787
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337295.795
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337300.804
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337305.807
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337310.814
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337315.821
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337320.841
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337325.847
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337330.854
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337335.859
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337340.867
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337345.882
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337351.289
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337356.297
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337361.302
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337366.307
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337371.313
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337376.318
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337381.322
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337386.328
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337391.336
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337396.341
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337401.347
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337406.354
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337411.362
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337416.368
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337421.378
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337426.388
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337431.395
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337436.401
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337441.407
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337446.412
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337451.417
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337456.422
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337461.428
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337466.433
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337471.438
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337476.445
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337481.451
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337486.456
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337491.461
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337496.467
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337501.473
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337506.479
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337511.484
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337516.613
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337521.617
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337526.622
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337531.627
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337536.634
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337541.641
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337546.646
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337551.653
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337556.659
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337561.667
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337566.672
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337571.678
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337576.681
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337581.693
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337586.702
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337591.707
+[pod/web-7f75456549-nqh9t/web] [requeue] n=5 t=1794337596.713
+[pod/web-7f75456549-nqh9t/web] [requeue] n=8 t=1794337601.718
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337606.722
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337611.728
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337616.734
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337621.741
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337626.747
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337631.757
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337636.765
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337641.770
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337646.777
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337651.783
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337656.789
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337661.798
+[pod/web-7f75456549-nqh9t/web] [requeue] n=7 t=1794337666.815
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337671.829
+[pod/web-7f75456549-nqh9t/web] [requeue] n=9 t=1794337676.875
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337681.888
+[pod/web-7f75456549-nqh9t/web] [requeue] n=6 t=1794337686.895
+[pod/web-7f75456549-nqh9t/web] [requeue] n=1 t=1794337691.900
+[pod/web-7f75456549-nqh9t/web] ERROR:    Exception in ASGI application
+[pod/web-7f75456549-nqh9t/web] asyncpg.exceptions.AdminShutdownError: terminating connection due to administrator command
+[pod/web-7f75456549-nqh9t/web] 
+[pod/web-7f75456549-nqh9t/web] The above exception was the direct cause of the following exception:
+[pod/web-7f75456549-nqh9t/web] 
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+[pod/web-7f75456549-nqh9t/web]     result = await app(  # type: ignore[func-returns-value]
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     return await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/applications.py", line 1216, in __call__
+[pod/web-7f75456549-nqh9t/web]     await super().__call__(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/applications.py", line 96, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, _send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/metrics.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send_wrapper)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 683, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2809, in app
+[pod/web-7f75456549-nqh9t/web]     await route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1837, in handle
+[pod/web-7f75456549-nqh9t/web]     await self.original_router.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2892, in handle
+[pod/web-7f75456549-nqh9t/web]     await included_router._handle_selected(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1863, in _handle_selected
+[pod/web-7f75456549-nqh9t/web]     await original_route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1326, in handle
+[pod/web-7f75456549-nqh9t/web]     await effective_context.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 166, in app
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 152, in app
+[pod/web-7f75456549-nqh9t/web]     response = await f(request)
+[pod/web-7f75456549-nqh9t/web]                ^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 745, in app
+[pod/web-7f75456549-nqh9t/web]     raw_response = await run_endpoint_function(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+[pod/web-7f75456549-nqh9t/web]     return await dependant.call(**values)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/tasks.py", line 48, in create_task
+[pod/web-7f75456549-nqh9t/web]     exists = await conn.fetchval("SELECT 1 FROM appointments WHERE id = $1", appointment_id)
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 741, in fetchval
+[pod/web-7f75456549-nqh9t/web]     data = await self._execute(query, args, 1, timeout)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 1904, in _execute
+[pod/web-7f75456549-nqh9t/web]     result, _ = await self.__execute(
+[pod/web-7f75456549-nqh9t/web]                 ^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2003, in __execute
+[pod/web-7f75456549-nqh9t/web]     result, stmt = await self._do_execute(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2066, in _do_execute
+[pod/web-7f75456549-nqh9t/web]     result = await executor(stmt, None)
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "asyncpg/protocol/protocol.pyx", line 197, in bind_execute
+[pod/web-7f75456549-nqh9t/web] asyncpg.exceptions.ConnectionDoesNotExistError: connection was closed in the middle of operation: terminating connection due to administrator command
+[pod/web-7f75456549-nqh9t/web] Failed to restore the pool connection floor; retrying
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 564, in _maintain_min_size
+[pod/web-7f75456549-nqh9t/web]     await holder.connect()
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 172, in connect
+[pod/web-7f75456549-nqh9t/web]     con = await self._pool._get_new_connection()
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 655, in _get_new_connection
+[pod/web-7f75456549-nqh9t/web]     con = await self._connect(
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2498, in connect
+[pod/web-7f75456549-nqh9t/web]     return await connect_utils._connect(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1307, in _connect
+[pod/web-7f75456549-nqh9t/web]     raise last_error or exceptions.TargetServerAttributeNotMatched(
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1278, in _connect
+[pod/web-7f75456549-nqh9t/web]     conn = await _connect_addr(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1092, in _connect_addr
+[pod/web-7f75456549-nqh9t/web]     return await __connect_addr(params, True, *args)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1162, in __connect_addr
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await connector
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 996, in _create_ssl_connection
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await loop.create_connection(
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "uvloop/loop.pyx", line 1979, in create_connection
+[pod/web-7f75456549-nqh9t/web] socket.gaierror: [Errno -3] Temporary failure in name resolution
+[pod/web-7f75456549-nqh9t/web] ERROR:    Exception in ASGI application
+[pod/web-7f75456549-nqh9t/web] Traceback (most recent call last):
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+[pod/web-7f75456549-nqh9t/web]     result = await app(  # type: ignore[func-returns-value]
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     return await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/applications.py", line 1216, in __call__
+[pod/web-7f75456549-nqh9t/web]     await super().__call__(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/applications.py", line 96, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, _send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/metrics.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send_wrapper)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/routing.py", line 683, in __call__
+[pod/web-7f75456549-nqh9t/web]     await self.middleware_stack(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2809, in app
+[pod/web-7f75456549-nqh9t/web]     await route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1837, in handle
+[pod/web-7f75456549-nqh9t/web]     await self.original_router.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 2892, in handle
+[pod/web-7f75456549-nqh9t/web]     await included_router._handle_selected(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1863, in _handle_selected
+[pod/web-7f75456549-nqh9t/web]     await original_route.handle(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 1326, in handle
+[pod/web-7f75456549-nqh9t/web]     await effective_context.app(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 166, in app
+[pod/web-7f75456549-nqh9t/web]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     raise exc
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[pod/web-7f75456549-nqh9t/web]     await app(scope, receive, sender)
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 152, in app
+[pod/web-7f75456549-nqh9t/web]     response = await f(request)
+[pod/web-7f75456549-nqh9t/web]                ^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 745, in app
+[pod/web-7f75456549-nqh9t/web]     raw_response = await run_endpoint_function(
+[pod/web-7f75456549-nqh9t/web]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+[pod/web-7f75456549-nqh9t/web]     return await dependant.call(**values)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/app/app/tasks.py", line 47, in create_task
+[pod/web-7f75456549-nqh9t/web]     async with database.pool.acquire() as conn:
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 1182, in __aenter__
+[pod/web-7f75456549-nqh9t/web]     self.connection = await self.pool._acquire(self.timeout)
+[pod/web-7f75456549-nqh9t/web]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 1014, in _acquire
+[pod/web-7f75456549-nqh9t/web]     return await _acquire_impl()
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 998, in _acquire_impl
+[pod/web-7f75456549-nqh9t/web]     proxy = await ch.acquire()  # type: PoolConnectionProxy
+[pod/web-7f75456549-nqh9t/web]             ^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 189, in acquire
+[pod/web-7f75456549-nqh9t/web]     await self.connect()
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 172, in connect
+[pod/web-7f75456549-nqh9t/web]     con = await self._pool._get_new_connection()
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/pool.py", line 655, in _get_new_connection
+[pod/web-7f75456549-nqh9t/web]     con = await self._connect(
+[pod/web-7f75456549-nqh9t/web]           ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2498, in connect
+[pod/web-7f75456549-nqh9t/web]     return await connect_utils._connect(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1307, in _connect
+[pod/web-7f75456549-nqh9t/web]     raise last_error or exceptions.TargetServerAttributeNotMatched(
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1278, in _connect
+[pod/web-7f75456549-nqh9t/web]     conn = await _connect_addr(
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1092, in _connect_addr
+[pod/web-7f75456549-nqh9t/web]     return await __connect_addr(params, True, *args)
+[pod/web-7f75456549-nqh9t/web]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1162, in __connect_addr
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await connector
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "/opt/venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 996, in _create_ssl_connection
+[pod/web-7f75456549-nqh9t/web]     tr, pr = await loop.create_connection(
+[pod/web-7f75456549-nqh9t/web]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[pod/web-7f75456549-nqh9t/web]   File "uvloop/loop.pyx", line 1979, in create_connection
+[pod/web-7f75456549-nqh9t/web] socket.gaierror: [Errno -3] Temporary failure in name resolution
+[pod/web-7f75456549-nqh9t/web] [requeue] n=1 t=1794337765.836

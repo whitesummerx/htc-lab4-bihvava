@@ -1,0 +1,48 @@
+FROM debian:12-slim AS builder
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    python3-venv \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Спочатку лише requirements-worker.txt: шар із залежностями кешується, поки файл не змінився
+COPY requirements-worker.txt .
+RUN pip install --no-cache-dir -r requirements-worker.txt
+
+
+
+FROM debian:12-slim AS final
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/opt/venv/bin:$PATH" \
+    PYTHONPATH="/app"
+
+# Лише інтерпретатор, у venv python3 є символічним посиланням на /usr/bin/python3
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Непривілейований користувач з фіксованим UID/GID 10001
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /usr/sbin/nologin -m appuser
+
+# chown під час копіювання, окремий RUN chown -R дублював би весь venv у новому шарі
+COPY --from=builder --chown=10001:10001 /opt/venv /opt/venv
+COPY --chown=10001:10001 ./worker /app/worker
+
+USER 10001
+
+EXPOSE 9100
+
+# SIGTERM отримує сам процес сервісу (PID 1), а не оболонка
+CMD ["/opt/venv/bin/python", "-m", "worker.main"]

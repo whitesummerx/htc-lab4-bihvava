@@ -1,0 +1,4 @@
+[pod/web-9d6cf4fc8-msbhh/web] INFO:     Started server process [1]
+[pod/web-9d6cf4fc8-msbhh/web] INFO:     Waiting for application startup.
+[pod/web-9d6cf4fc8-msbhh/web] INFO:     Application startup complete.
+[pod/web-9d6cf4fc8-msbhh/web] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)

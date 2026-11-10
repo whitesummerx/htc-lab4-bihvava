@@ -1,0 +1,15 @@
+# Prometheus збирає /metrics усіх подів worker кожні 5 с (мітка pod = імʼя пода).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: worker
+spec:
+  jobLabel: app
+  selector:
+    matchLabels:
+      app: worker
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 5s
+      scrapeTimeout: 4s

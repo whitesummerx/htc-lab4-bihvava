@@ -1,0 +1,26 @@
+# Кластер за варіантом 3: kind, 1 control-plane + 2 worker.
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+# Лаб. 4, крок 9: з типовою затримкою CrashLoopBackOff (до 300 с) воркер, що аварійно завершується
+# за FAIL_RATE, майже не працює. Максимальну паузу перед перезапуском контейнера зменшено до 1 с
+# (поле crashLoopBackOff у KubeletConfiguration, KEP-5593), щоб вимірювати вплив самих збоїв.
+kubeadmConfigPatches:
+  - |
+    kind: KubeletConfiguration
+    apiVersion: kubelet.config.k8s.io/v1beta1
+    crashLoopBackOff:
+      maxContainerRestartPeriod: "1s"
+nodes:
+  - role: control-plane
+    # Порти NodePort-сервісів прокидаються на localhost хоста.
+    extraPortMappings:
+      - containerPort: 30080   # Service web (NodePort)  -> localhost:8080
+        hostPort: 8080
+        listenAddress: "127.0.0.1"
+        protocol: TCP
+      - containerPort: 30090   # Prometheus (NodePort)   -> localhost:9090
+        hostPort: 9090
+        listenAddress: "127.0.0.1"
+        protocol: TCP
+  - role: worker
+  - role: worker
